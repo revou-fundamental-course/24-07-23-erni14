@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time to Travel Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto+Condensed:wght@300;400&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <!-- NAV SECTION -->
+        <section id="headerNavigation">
+            <a href="index.html">
+                <div class="logo">
+                    <img src="assets/Logo.png" alt="Logo" width="55rem" height="60rem">
+                    <div class="detailLogo">
+                        <h3>Time to Travel</h3>
+                        <p>Enjoy your road!</p>
+                    </div>
+                </div>
+            </a>
+            <nav id="navigation">
+                <a class="menu" href="index.html" onclick="scrollToSectionHome()">Home</a>
+                <a class="menu" href="#ourPackage" onclick="scrollToSectionPackage()">Our Package</a>
+                <a class="menu" href="#callUs" onclick="scrollToSectionCallus()">Call Us</a>
+            </nav>
+        </section>
+    </header>
+    <main>
+        <!-- TITLE SECTION -->
+        <section id="headerTitle">
+            <h1>Your Trusted Travel Agent's</h1>
+            <p id="subtitle">Your happiness is our hapiness</p>
+        </section>
+        <section id="home">
+            <article id="articleContainer">
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <img class="images" src="assets/Picture 1.png" alt="Gambar 1" width="800rem" height="400rem">
+                    </div>
+                    <div class="mySlides fade">
+                        <img class="images" src="assets/Picture 2.png" alt="Gambar 1" width="800rem" height="400rem">
+                    </div>
+                    <div class="mySlides fade">
+                        <img class="images" src="assets/Picture 3.jpeg" alt="Gambar 1" width="800rem" height="400rem">
+                    </div>
+                    <div class="mySlides fade">
+                        <img class="images" src="assets/Picture 4.jpg" alt="Gambar 1" width="800rem" height="400rem">
+                    </div>
+                    <a class="prev" onClick="nextbanner(-1)">&#10094;</a>
+                    <a class="next" onClick="nextbanner(1)">&#10095;</a>
+                    
+                </div>
+                <br>
+
+                <div style="text-align:center">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+
+                <div id="articleContent">
+                    <i id="quotes">"Liburan jadi menyenangkan bersama Time to Travel. Agen travel yang sangat ramah
+                        pengguna dengan banyak opsi perjalanan"</i>
+                    <section id="accountContainer">
+                        <div id="profilePict">
+                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                                alt="Profile Picture" width="50" height="50">
+                        </div>
+                        <div id="accountData">
+                            <div id="accountName">
+                                <b>Florence Hughes</b>
+                            </div>
+                            <div id="accountDetail">
+                                <i>Ibu Rumah Tangga</i>
+                                <span>,</span>
+                                <i>28</i>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <hr id="lineHome">
+                <div id="detailProduct">
+                    <p>
+                        Use this space to provide users with more information
+                        about your offer. Consider it a follow-up to your headline
+                        and explain the benefits of your service or product
+                    </p>
+                    <div class="detailContainer">
+                        <h1 class="number">1</h1>
+                        <p>Your first feature, written in the form of a benefit statement</p>
+                    </div>
+                    <div class="detailContainer">
+                        <h1 class="number">2</h1>
+                        <p>Your second feature, written in the form of a benefit statement</p>
+                    </div>
+                    <div class="detailContainer">
+                        <h1 class="number">3</h1>
+                        <p>Your third feature, written in the form of a benefit statement</p>
+                    </div>
+                </div>
+            </article>
+            <section id="form">
+                <aside id="formContainer">
+                    <h3 class="titleSubtitle formTitle">JOIN WITH US!</h3>
+                    <p class="titleSubtitle">Sales akan menghubungi Anda 1 x 24 jam setelah data kami terima.</p>
+                    <form action="#" id="form">
+                        <div class="questionGroup">
+                            <label for="name">Your name : </label><br>
+                            <input type="text" id="name" name="name" placeholder="First and last name"><br>
+                            <span id="errorName" class="errorMessage"></span>
+                        </div>
+                        <div class="questionGroup">
+                            <label for="email">Email Address : </label><br>
+                            <!-- Tipe input bukan email karena validasi dilakukan melalui javascript (kalau terdapat kesalahan, pesan tidak muncul jika type input adalah email) -->
+                            <input type="text" id="email" name="email" placeholder="example@gmail.com"><br>
+                            <span id="errorEmail" class="errorMessage"></span>
+                        </div>
+                        <div class="questionGroup">
+                            <label for="pNumber">Phone Number : </label><br>
+                            <input type="text" id="pNumber" name="pNumber" placeholder="08xxxxxxxxxxxx"><br>
+                            <span id="errorPNumber" class="errorMessage"></span>
+                        </div>
+                        <div class="questionGroup">
+                            <label for="interest">What are you interested in? </label><br>
+                            <select id="interest" name="interest">
+                                <option value="" selected>Select option</option>
+                                <option value="Beach">Beach</option>
+                                <option value="Mountain">Mountain</option>
+                            </select> <br>
+                            <span id="errorInterest" class="errorMessage"></span>
+                        </div>
+                        <input type="button" id="submit" name="submit" value="SEND" onclick="validateForm()">
+                    </form>
+                    <!-- <div id="alert-success" class="alert">
+                        <div class="alert-success">
+                            <h3>Input berhasil</h3>
+                            <div class="success-konten">
+                                <div class="konten-kiri">
+                                    <p>Nama</p>
+                                    <p>Email</p>
+                                    <p>Tujuan</p>
+                                </div>
+                                <div class="konten-kanan">
+                                    <p id="data-name">Nama</p>
+                                    <p id="data-email">Email</p>
+                                    <p id="data-pNumber">Phone Number</p>
+                                    <p id="data-interest">Tujuan</p>
+                                </div>
+                            </div>
+                            <p style="margin-top: 25px; text-align: center;">Sales akan menghubungi anda 1x24 jam
+                                setelah data kami terima.</p>
+                            <button onclick="closeAlertSuccess()">Tutup</button>
+                        </div>
+                    </div> -->
+                </aside>
+            </section>
+        </section>
+        <section id="ourPackage">
+            <h1 id="packageTitle">Our Package</h1>
+            <article id="packageContainer">
+                <div class="listPackageContainer">
+                    <img src="assets/location.png" alt="Location" width="50rem" height="50rem">
+                    <div class="detailPackage">
+                        <h3>Bali</h3>
+                        <p>Travel dan wisata di Bali. Kunjungi cagar budaya dan kuliner yang menarik</p>
+                    </div>
+                </div>
+                <div class="listPackageContainer">
+                    <img src="assets/location.png" alt="Location" width="50rem" height="50rem">
+                    <div class="detailPackage">
+                        <h3>Bali</h3>
+                        <p>Travel dan wisata di Bali. Kunjungi cagar budaya dan kuliner yang menarik</p>
+                    </div>
+                </div>
+                <div class="listPackageContainer">
+                    <img src="assets/location.png" alt="Location" width="50rem" height="50rem">
+                    <div class="detailPackage">
+                        <h3>Bali</h3>
+                        <p>Travel dan wisata di Bali. Kunjungi cagar budaya dan kuliner yang menarik</p>
+                    </div>
+                </div>
+                <div class="listPackageContainer">
+                    <img src="assets/location.png" alt="Location" width="50rem" height="50rem">
+                    <div class="detailPackage">
+                        <h3>Bali</h3>
+                        <p>Travel dan wisata di Bali. Kunjungi cagar budaya dan kuliner yang menarik</p>
+                    </div>
+                </div>
+                <div class="listPackageContainer">
+                    <img src="assets/location.png" alt="Location" width="50rem" height="50rem">
+                    <div class="detailPackage">
+                        <h3>Bali</h3>
+                        <p>Travel dan wisata di Bali. Kunjungi cagar budaya dan kuliner yang menarik</p>
+                    </div>
+                </div>
+                <div class="listPackageContainer">
+                    <img src="assets/location.png" alt="Location" width="50rem" height="50rem">
+                    <div class="detailPackage">
+                        <h3>Bali</h3>
+                        <p>Travel dan wisata di Bali. Kunjungi cagar budaya dan kuliner yang menarik</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <hr>
+        <section id="callUs">
+            <h1>Your Closing Argument Headline</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora nam voluptatem ducimus similique nihil
+                eaque, distinctio quo natus, sint fugit accusamus molestias recusandae quaerat assumenda eligendi
+                inventore harum sequi at?</p>
+            <button id="callToAction">
+                CALL TO ACTION
+            </button>
+        </section>
+    </main>
+    <footer>
+        <section id="footerContainer">
+            <a href="index.html">
+                <section class="logo">
+                    <img src="assets/Logo.png" alt="Logo" width="55rem" height="60rem">
+                    <div class="detailLogo">
+                        <h3>Time to Travel</h3>
+                        <p>Enjoy your road!</p>
+                    </div>
+                </section>
+            </a>
+            <section id="linkFooter">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+            </section>
+            <p>@2023 Erni Kurnia Putri</p>
+        </section>
+    </footer>
+
+</body>
+<script>
+    let slideIndex = 0;
+    showSlides();
+</script>
+
+</html>
