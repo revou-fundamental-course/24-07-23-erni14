@@ -17,51 +17,57 @@
 
 // AUTO SLIDER
 
-// var bannerIndex = 1;
+var slideIndex = 0;
 
-// function nextbanner(n) {
-//     showbanner(bannerIndex += n);
-// }
+function nextSlides(n) {
+    showSlides(slideIndex += n);
+}
 
-// function showbanner(n) {
-//     var i;
-//     var banner = document.getElementsByClassName("mySlides");
-
-//     if (n > banner.length) {
-//         bannerIndex = 1;
-//     }
-//     if (n < 1) {
-//         bannerIndex = banner.length;
-//     }
-//     for (i = 0; i < banner.length; i++) {
-//         banner[i].style.display = "none";
-//     }
-
-//     banner[bannerIndex - 1].style.display = "block";
-// }
-
-// function nextBannerAuto() {
-//     nextbanner(1);
-// }
-
-// setInterval(nextBannerAuto, 3000);
-
-function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
+
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
+
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-    setTimeout(showSlides, 4000); // Change image every 2 seconds
 }
+
+function nextSlidesAuto() {
+    nextSlides(1);
+}
+
+setInterval(nextSlidesAuto, 4000); // Change image every 5 seconds
+
+// function showSlides() {
+//     let i;
+//     let slides = document.getElementsByClassName("mySlides");
+//     let dots = document.getElementsByClassName("dot");
+//     for (i = 0; i < slides.length; i++) {
+//         slides[i].style.display = "none";
+//     }
+//     slideIndex++;
+//     if (slideIndex > slides.length) { slideIndex = 1 }
+//     if (slideIndex < 1) { slideIndex = slides.length}
+//     for (i = 0; i < dots.length; i++) {
+//         dots[i].className = dots[i].className.replace(" active", "");
+//     }
+//     slides[slideIndex - 1].style.display = "block";
+//     dots[slideIndex - 1].className += " active";
+//     setTimeout(showSlides, 4000); // Change image every 2 seconds
+// }
 
 // FORM VALIDATION
 
