@@ -102,9 +102,7 @@ hr {
 }
 
 .images {
-    width:50rem;
-    position: relative;
-    height: 30rem;
+    width:100%;
     border-radius: 1rem;
     box-shadow: 4px 4px 20px 0px rgba(0,0,0,0.75);
     -webkit-box-shadow: 4px 4px 20px 0px rgba(0,0,0,0.75);
