@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function setFormError(input, arrLabel, index, condition, msg) {
     if (condition) {
-        input.style.border = '1px solid rgb(161, 22, 22)';
+        input.style.border = '1px solid rgb(237, 16, 16)';
         input.style.borderRadius ='0.5rem';
         arrLabel[index].textContent = msg;
         arrLabel[index].style.display = 'block';
