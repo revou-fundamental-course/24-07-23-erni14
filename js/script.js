@@ -143,15 +143,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function setFormError(input, arrLabel, index, condition, msg) {
     if (condition) {
-        input.style.borderColor = 'rgb(161, 22, 22)';
-        input.style.outline = '1px solid rgb(161, 22, 22)';
+        input.style.border = '1px solid rgb(161, 22, 22)';
         input.style.borderRadius ='0.5rem';
         arrLabel[index].textContent = msg;
         arrLabel[index].style.display = 'block';
     } else {
-        input.style.borderColor = '#29323D';
+        input.style.border = '1px solid #29323d';
         input.style.borderRadius ='0.5rem';
-        input.style.outline = '1px solid #29323D';
         arrLabel[index].style.display = 'none';
     }
 }
