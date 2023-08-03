@@ -7,12 +7,6 @@
     <title>Time to Travel Website</title>
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/script.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto+Condensed:wght@300;400&display=swap"
-        rel="stylesheet">
-
 </head>
 
 <body>
@@ -111,7 +105,8 @@
             <section id="formOutside">
                 <aside id="formContainer">
                     <h3 class="titleSubtitle formTitle">JOIN WITH US!</h3>
-                    <p class="titleSubtitle formDetail">Sales akan menghubungi Anda 1 x 24 jam setelah data kami terima.</p>
+                    <p class="titleSubtitle formDetail">Sales akan menghubungi Anda 1 x 24 jam setelah data kami terima.
+                    </p>
                     <form action="#" id="form">
                         <div class="questionGroup">
                             <label for="name">Your name : </label><br>
@@ -140,27 +135,18 @@
                         </div>
                         <input type="button" id="submit" name="submit" value="SEND" onclick="validateForm()">
                     </form>
-                    <!-- <div id="alert-success" class="alert">
-                        <div class="alert-success">
-                            <h3>Input berhasil</h3>
-                            <div class="success-konten">
-                                <div class="konten-kiri">
-                                    <p>Nama</p>
-                                    <p>Email</p>
-                                    <p>Tujuan</p>
-                                </div>
-                                <div class="konten-kanan">
-                                    <p id="data-name">Nama</p>
-                                    <p id="data-email">Email</p>
-                                    <p id="data-pNumber">Phone Number</p>
-                                    <p id="data-interest">Tujuan</p>
-                                </div>
+                    <div id="modalHidden" class="modal">
+                        <div class="modalHidden">
+                            <img src="assets/check.gif" width="100" height="100" alt="user" />
+                            <div>
+                                <h3>SUKSES</h3>
+                                <p>
+                                    Data Anda berhasil terkirim. Silakan tunggu sales menghubungi Anda dalam 1 x 24 jam!
+                                </p>
                             </div>
-                            <p style="margin-top: 25px; text-align: center;">Sales akan menghubungi anda 1x24 jam
-                                setelah data kami terima.</p>
-                            <button onclick="closeAlertSuccess()">Tutup</button>
+                            <button id="buttonModal" onclick="closeModalSuccess()">Tutup</button>
                         </div>
-                    </div> -->
+                    </div>
                 </aside>
             </section>
         </section>
@@ -240,7 +226,6 @@
             <p>@2023 Mini Project RevoU Fundamental Course</p>
         </section>
     </footer>
-
 </body>
 
 </html>

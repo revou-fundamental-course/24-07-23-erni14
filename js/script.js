@@ -1,42 +1,20 @@
-// SMOOTHING SCROLL
-
-// function scrollToSectionHome() {
-//     var section = document.getElementById('headerTitle');
-//     section.scrollIntoView({ behavior: "smooth" });
-// }
-
-// function scrollToSectionPackage() {
-//     var section = document.getElementById('home');
-//     section.scrollIntoView({ behavior: "smooth" });
-// }
-
-// function scrollToSectionCallus() {
-//     var section = document.getElementById('callUs');
-//     section.scrollIntoView({ behavior: "smooth" });
-// }
-
 // AUTO SLIDER
 
 var slideIndex = 0;
 
-function nextSlides(n) {
-    showSlides(slideIndex += n);
+function nextSlides(x) {
+    showSlides(slideIndex += x);
 }
 
-function showSlides(n) {
+function showSlides(x) {
     var i;
     var slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
-
-    if (n > slides.length) {
-        slideIndex = 1;
-    }
-    if (n < 1) {
-        slideIndex = slides.length;
-    }
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
+    if (x > slides.length) { slideIndex = 1; }
+    if (x < 1) { slideIndex = slides.length; }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
@@ -50,24 +28,6 @@ function nextSlidesAuto() {
 }
 
 setInterval(nextSlidesAuto, 4000); // Change image every 5 seconds
-
-// function showSlides() {
-//     let i;
-//     let slides = document.getElementsByClassName("mySlides");
-//     let dots = document.getElementsByClassName("dot");
-//     for (i = 0; i < slides.length; i++) {
-//         slides[i].style.display = "none";
-//     }
-//     slideIndex++;
-//     if (slideIndex > slides.length) { slideIndex = 1 }
-//     if (slideIndex < 1) { slideIndex = slides.length}
-//     for (i = 0; i < dots.length; i++) {
-//         dots[i].className = dots[i].className.replace(" active", "");
-//     }
-//     slides[slideIndex - 1].style.display = "block";
-//     dots[slideIndex - 1].className += " active";
-//     setTimeout(showSlides, 4000); // Change image every 2 seconds
-// }
 
 // FORM VALIDATION
 
@@ -125,31 +85,8 @@ function validateForm() {
         }
     }
 
-    // alertSuccess(textName, textEmail, textPNumber, textInterest);
+    modalSuccess(textName, textEmail, textPNumber, textInterest);
 }
-
-
-// function alertSuccess(name, email, pNumber, interest) {
-//     var modal = document.getElementById('alert-success');
-//     var dataName = document.getElementById('data-name');
-//     var dataEmail = document.getElementById('data-email');
-//     var dataPNumber = document.getElementById('data-pNumber');
-//     var dataInterest = document.getElementById('data-interest');
-
-
-//     modal.style.display = 'block';
-//     dataName.textContent = name;
-//     dataEmail.textContent = email;
-//     dataPNumber.textContent = pNumber;
-//     dataInterest.textContent = interest;
-// }
-
-// function closeAlertSuccess() {
-//     var modal = document.getElementById('alert-success');
-//     modal.style.display = 'none';
-
-//     document.getElementById("form").reset();
-// }
 
 function isNameValid(nameValue) {
     const isNameValid = /^[a-zA-Z0-9\s'-]+$/;
@@ -208,11 +145,25 @@ function setFormError(input, arrLabel, index, condition, msg) {
     if (condition) {
         input.style.borderColor = 'rgb(161, 22, 22)';
         input.style.outline = '1px solid rgb(161, 22, 22)';
+        input.style.borderRadius ='0.5rem';
         arrLabel[index].textContent = msg;
         arrLabel[index].style.display = 'block';
     } else {
         input.style.borderColor = '#29323D';
+        input.style.borderRadius ='0.5rem';
         input.style.outline = '1px solid #29323D';
         arrLabel[index].style.display = 'none';
     }
+}
+
+function modalSuccess(name, email, pNumber, interest) {
+    var modal = document.getElementById('modalHidden');
+    modal.style.display = 'block';
+}
+
+function closeModalSuccess() {
+    var modal = document.getElementById('modalHidden');
+    modal.style.display = 'none';
+
+    document.getElementById("form").reset();
 }
