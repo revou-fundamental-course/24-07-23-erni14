@@ -1,6 +1,8 @@
 // AUTO SLIDER
 
-var slideIndex = 0;
+var slideIndex = 1;
+var slides = document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("dot");
 
 function nextSlides(x) {
     showSlides(slideIndex += x);
@@ -8,8 +10,6 @@ function nextSlides(x) {
 
 function showSlides(x) {
     var i;
-    var slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
@@ -99,7 +99,7 @@ function isEmailValid(emailValue) {
 }
 
 function isPNumberValid(pNumberValue) {
-    const isPNumberValid = /(62|\+62|08).{8}/;
+    const isPNumberValid = /(62|\+62|08).{8,15}/;
     return isPNumberValid.test(pNumberValue);
 }
 
